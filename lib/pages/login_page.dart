@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter/widgets.dart';
 
 class LoginPage extends StatefulWidget {
@@ -16,20 +17,24 @@ class _LoginPageState extends State<LoginPage> {
         title: const Text(
           "Login",
         ),
+        centerTitle: true,
       ),
-      body: _buildUI(),
+      body: SafeArea(child: _buildUI()),
     );
   }
 
   Widget _buildUI() {
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        _title(),
-        _loginForm(),
-      ],
+    return SizedBox(
+      width: MediaQuery.sizeOf(context).width,
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          _title(),
+          _loginForm(),
+        ],
+      ),
     );
   }
 
